@@ -8001,34 +8001,69 @@ const data = [
   },
 ];
 
-// 1. fullname의 길이가 15글자 보다 길고 성별이 남성인 사람들만 리스트로 남기기
-const r1 = data.filter((x) => x.fullname.length > 15 && x.gender == "Male");
-console.log(r1);
-// 2. 부서가 Marketing or Accounting이고 성별이 여성이고 언어를 영어를 쓰는 사람 리스트
-const r2 = data.filter(
+// // 1. fullname의 길이가 15글자 보다 길고 성별이 남성인 사람들만 리스트로 남기기
+// const r1 = data.filter((x) => x.fullname.length > 15 && x.gender == "Male");
+// console.log(r1);
+// // 2. 부서가 Marketing or Accounting이고 성별이 여성이고 언어를 영어를 쓰는 사람 리스트
+// const r2 = data.filter(
+//   (x) =>
+//     (x.department == "Marketing" || x.department == "ACcounting") &&
+//     x.gender == "female" &&
+//     x.language == "English"
+// );
+// console.log(r2);
+// // 3. 돈이 5000보다 크면 이름과 부서만 남긴 사람 리스트로 만들기
+// const r3 = data
+//   .filter((x) => +x.money.replace("$", "") > 5000)
+//   .map((x) => {
+//     return { fullname: x.fullname, department: x.department };
+//   });
+
+// // 4. fullname에서 a,e,i로 시작하고 money가 3000보다 작은 사람들의 리스트
+// const r4 = data
+//   .filter(
+//     (X) =>
+//       X.fullname.startsWith("A") ||
+//       X.fullname.startsWith("E") ||
+//       X.fullname.startsWith("I")
+//   )
+//   .filter((x) => Number(x.money.replace("$", "")) < 3000);
+
+// console.log(r4);
+// // 5. creditcard에서 맨뒤의 4자리의 **** 바꾸기
+// x.creditcard = [];
+
+// 1
+const q1 = data.filter((x) => x.fullname.length > 15 && x.gender == "Male");
+console.log(q1);
+// 2
+const q2 = data.filter(
   (x) =>
-    (x.department == "Marketing" || x.department == "ACcounting") &&
+    (x.department == "Marketing" || x.department == "Accounting") &&
     x.gender == "female" &&
     x.language == "English"
 );
-console.log(r2);
-// 3. 돈이 5000보다 크면 이름과 부서만 남긴 사람 리스트로 만들기
-const r3 = data
+console.log(q2);
+//  3
+const q3 = data
   .filter((x) => +x.money.replace("$", "") > 5000)
   .map((x) => {
     return { fullname: x.fullname, department: x.department };
   });
-
-// 4. fullname에서 a,e,i로 시작하고 money가 3000보다 작은 사람들의 리스트
-const r4 = data
+console.log(q3);
+// 4
+const q4 = data
   .filter(
-    (X) =>
-      X.fullname.startsWith("A") ||
-      X.fullname.startsWith("E") ||
-      X.fullname.startsWith("I")
+    (x) =>
+      x.fullname.startsWith("A") ||
+      x.fullname.startsWith("E") ||
+      x.fullname.startsWith("I")
   )
-  .filter((x) => Number(x.money.replace("$", "")) < 3000);
-
-console.log(r4);
-// 5. creditcard에서 맨뒤의 4자리의 **** 바꾸기
-x.creditcard = [];
+  .filter((x) => +x.money.replace("$", "") < 3000);
+console.log(q4);
+//5
+const q5 = data.filter((x) => {
+  x.creditcard = [...creditcard].map((x, i) =>
+    x.creditcard.length - 4 > i ? x : "*"
+  );
+});
