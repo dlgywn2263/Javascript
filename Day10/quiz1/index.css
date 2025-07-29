@@ -1,0 +1,29 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  box-shadow: rgba(0, 0, 0, 15);
+  gap: 20px;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.item {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 10px;
+}
+.info {
+  font-size: 18px;
+}
+.info > .email {
+  font-size: 15px;
+  color: grey;
+}
+.item > img {
+  border: 1px solid black;
+  border-radius: 9999px;
+  margin: 10px 10px;
+  object-fit: cover;
+}
