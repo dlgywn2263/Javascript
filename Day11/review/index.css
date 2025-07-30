@@ -1,0 +1,25 @@
+section {
+  display: flex;
+  flex-direction: column;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 0px;
+}
+.item {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid rgb(199, 199, 199);
+}
+.item > img {
+  width: 140px;
+  height: 170px;
+  object-fit: cover;
+  padding: 20px 20px;
+}
+.info > .pricetitle {
+  font-size: 20px;
+  font-weight: bold;
+}

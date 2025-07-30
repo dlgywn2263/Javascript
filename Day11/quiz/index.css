@@ -1,0 +1,11 @@
+section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.box {
+  width: 300px;
+  background-color: grey;
+  padding: 10px;
+  border-radius: 3px;
+}
